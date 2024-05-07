@@ -1,0 +1,39 @@
+<server description="inventory service">
+
+    <featureManager>
+        <feature>jsonb-3.0</feature>
+        <feature>jsonp-2.1</feature>
+        <feature>restfulWS-3.1</feature>
+        <feature>mpConfig-3.1</feature>
+        <feature>mpTelemetry-1.1</feature>
+        <feature>jndi-1.0</feature>
+        <feature>messaging-3.1</feature>
+    </featureManager>
+
+    <httpEndpoint httpPort="9091"
+                  id="defaultHttpEndpoint" host="*" />
+                  
+    <resourceAdapter id="wmqjms" location="${server.config.dir}/lib/wmq.jakarta.jmsra.rar" />              
+    <jmsQueueConnectionFactory jndiName="jms/qm1" connectionManagerRef="QM1">
+    <properties.wmqjms       
+        transportType="CLIENT"
+        hostName="192.168.184.133"       
+        port="1414"
+        channel="APP2.SVRCONN"      
+        queueManager="QM1"/>
+	</jmsQueueConnectionFactory>
+	
+	<jmsQueue id="jms/qs" jndiName="jms/qs">
+        <properties.wmqjms baseQueueName="Q1" baseQueueManagerName="QM1"/>
+    </jmsQueue>
+    <jmsQueue id="jms/qr" jndiName="jms/qr">
+        <properties.wmqjms baseQueueName="Q2" baseQueueManagerName="QM1"/>
+    </jmsQueue>
+	<connectionManager id="QM1" maxPoolSize="2"/>
+
+    <webApplication location="guide-microprofile-telemetry-inventory.war"
+                    contextRoot="/">
+        <classloader apiTypeVisibility="+third-party"/>
+    </webApplication>
+
+</server>

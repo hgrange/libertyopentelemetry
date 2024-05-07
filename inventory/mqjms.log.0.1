@@ -1,0 +1,36 @@
+11 avril 2024 à 19:15:42 CEST[main] com.ibm.msg.client.jms.internal.JmsQueueConnectionImpl
+L'appel de la méthode de réception ne renverra pas un message pour une connexion arrêtée.
+
+EXPLICATION :
+La spécification JMS indique que l'appel de la méthode receive() ne doit pas renvoyer de message si la connexion est arrêtée. L'appel de receiveNoWait ou de la méthode de réception avec un délai d'expiration renverra la valeur null lorsque le délai arrive à expiration. L'appel de la méthode de réception sans délai d'expiration ne renverra rien avant que la connexion ne soit démarrée ou fermée ou que l'application soit arrêtée.
+
+ACTION :
+Démarrez la connexion en appelant javax.jms.Connection.start().
+--------------------------------------------------------------------
+11 avril 2024 à 19:16:15 CEST[main] com.ibm.msg.client.jms.internal.JmsQueueConnectionImpl
+L'appel de la méthode de réception ne renverra pas un message pour une connexion arrêtée.
+
+EXPLICATION :
+La spécification JMS indique que l'appel de la méthode receive() ne doit pas renvoyer de message si la connexion est arrêtée. L'appel de receiveNoWait ou de la méthode de réception avec un délai d'expiration renverra la valeur null lorsque le délai arrive à expiration. L'appel de la méthode de réception sans délai d'expiration ne renverra rien avant que la connexion ne soit démarrée ou fermée ou que l'application soit arrêtée.
+
+ACTION :
+Démarrez la connexion en appelant javax.jms.Connection.start().
+--------------------------------------------------------------------
+11 avril 2024 à 19:19:30 CEST[main] com.ibm.msg.client.jms.internal.JmsQueueConnectionImpl
+L'appel de la méthode de réception ne renverra pas un message pour une connexion arrêtée.
+
+EXPLICATION :
+La spécification JMS indique que l'appel de la méthode receive() ne doit pas renvoyer de message si la connexion est arrêtée. L'appel de receiveNoWait ou de la méthode de réception avec un délai d'expiration renverra la valeur null lorsque le délai arrive à expiration. L'appel de la méthode de réception sans délai d'expiration ne renverra rien avant que la connexion ne soit démarrée ou fermée ou que l'application soit arrêtée.
+
+ACTION :
+Démarrez la connexion en appelant javax.jms.Connection.start().
+--------------------------------------------------------------------
+11 avril 2024 à 19:25:43 CEST[main] com.ibm.msg.client.jms.internal.JmsQueueConnectionImpl
+L'appel de la méthode de réception ne renverra pas un message pour une connexion arrêtée.
+
+EXPLICATION :
+La spécification JMS indique que l'appel de la méthode receive() ne doit pas renvoyer de message si la connexion est arrêtée. L'appel de receiveNoWait ou de la méthode de réception avec un délai d'expiration renverra la valeur null lorsque le délai arrive à expiration. L'appel de la méthode de réception sans délai d'expiration ne renverra rien avant que la connexion ne soit démarrée ou fermée ou que l'application soit arrêtée.
+
+ACTION :
+Démarrez la connexion en appelant javax.jms.Connection.start().
+--------------------------------------------------------------------

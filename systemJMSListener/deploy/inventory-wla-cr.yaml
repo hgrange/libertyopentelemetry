@@ -1,0 +1,34 @@
+apiVersion liberty.websphere.ibm.comv1
+kind WebSphereLibertyApplication
+metadata
+  name inventory
+  namespace liberty
+spec
+  license
+    accept true
+    edition IBM WebSphere Application Server Liberty Core
+    productEntitlementSource IBM Cloud Pak for Applications
+  applicationVersion v1
+  topologySpreadConstraints
+    constraints
+      - labelSelector
+          matchLabels
+            app.kubernetes.ioinstance zone
+        maxSkew 1
+        topologyKey kubernetes.iohostname
+        whenUnsatisfiable ScheduleAnyway
+  securityContext
+    runAsNonRoot true
+    readOnlyRootFilesystem false
+  serviceAccount
+    mountToken true
+  autoscaling
+    minReplicas 1
+    maxReplicas 2
+    targetCPUUtilizationPercentage 60
+  applicationImage IMAGE_REFERENCE
+  expose true
+  manageTLS true
+  replicas 1
+  pullPolicy Always
+  manageLTPA false

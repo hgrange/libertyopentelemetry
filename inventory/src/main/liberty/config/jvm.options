@@ -1,0 +1,10 @@
+-Dotel.service.name=inventory
+-Dotel.sdk.disabled=false
+-Dotel.traces.exporter=otlp
+-Dotel.exporter.otlp.endpoint=http://localhost:4318
+-Dotel.instrumentation.jms.enabled=true
+-Dotel.metrics.exporter=none
+-Dotel.logs.exporter=none
+-Dotel.propagators=tracecontext
+-Duser.language=en
+-javaagent:lib\opentelemetry-javaagent.jar
