@@ -2,7 +2,6 @@ apiVersion liberty.websphere.ibm.comv1
 kind WebSphereLibertyApplication
 metadata
   name inventory
-  namespace liberty
 spec
   license
     accept true
