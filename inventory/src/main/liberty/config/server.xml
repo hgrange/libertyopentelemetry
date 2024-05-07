@@ -20,7 +20,7 @@
 		connectionManagerRef="QM1">
 		<properties.wmqjms transportType="CLIENT"
 			hostName="192.168.184.133" port="1414" channel="APP2.SVRCONN"
-			queueManager="QM1" />
+			queueManager="QM1" sslCipherSuite="ANY_TLS13"/>
 	</jmsQueueConnectionFactory>
 
 	<jmsQueue id="jms/qs" jndiName="jms/qs">
